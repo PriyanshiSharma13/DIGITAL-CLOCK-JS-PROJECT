@@ -32,10 +32,10 @@ function showTime(){
         "0" + showDisplayTime.getSeconds();
     }
     if(hours >= 12){
-        session.innerHTML = "PM";
+        session.innerHTML = "AM";
     }
     else{
-        session.innerHTML = "AM";
+        session.innerHTML = "PM";
     }
 
     document.getElementById("hours").innerHTML = hours + `<br>hours`;
@@ -62,11 +62,6 @@ function showTime(){
         document.getElementById("changeImage").src = "goodnight_image.jpg";
         document.getElementById("greetText").innerText = "CLOSE YOUR EYES AND GO TO SLEEP";
         document.getElementById("timeText").innerText = "GOOD NIGHT !!";
-    }
-    else{
-        document.getElementById("changeImage").src = "noddy_image.png";
-        document.getElementById("greetText").innerText = "My First Digital Clock";
-        document.getElementById("timeText").innerText = "Have a nice day :)";
     }
 };
 setInterval(showTime,1000);

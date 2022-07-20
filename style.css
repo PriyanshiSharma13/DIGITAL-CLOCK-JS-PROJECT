@@ -181,8 +181,8 @@ select{
     font-family: 'Bubblegum Sans', cursive;
     font-weight: 900;
     letter-spacing: 1px;
-    padding: 6px;
-    font-size: 2rem;
+    padding: 8px;
+    font-size: 1.8rem;
     text-align: center;
 }
 .text{

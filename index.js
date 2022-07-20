@@ -18,24 +18,25 @@ function showTime(){
     var secs = showDisplayTime.getSeconds();
     var session = document.getElementById("session");
     var hr = showDisplayTime.getHours();
+    
+    if(hours >= 12){
+        session.innerHTML = "PM";
+    }
+    else{
+        session.innerHTML = "AM";
+    }
 
     if(hours > 12){
         hours = hours - 12;
     }
-    if(hours < 10){
-        "0" + showDisplayTime.getHours();
+    if((hours+"").length === 1){
+        hours = "0"+hours;
     }
-    if(mins < 10){
-        "0" + showDisplayTime.getMinutes();
+    if((mins+"").length === 1){
+        mins = "0"+mins;
     }
-    if(secs < 10){
-        "0" + showDisplayTime.getSeconds();
-    }
-    if(hours >= 12){
-        session.innerHTML = "AM";
-    }
-    else{
-        session.innerHTML = "PM";
+    if((secs+"").length === 1){
+        secs = "0"+secs;
     }
 
     document.getElementById("hours").innerHTML = hours + `<br>hours`;
@@ -48,20 +49,25 @@ function showTime(){
         document.getElementById("greetText").innerText = "GRAB SOME HEALTHY BREAKFAST!!!";
         document.getElementById("timeText").innerText = "GOOD MORNING!! WAKE UP !!";
     }
-    if(groupTwo == hr){
+    else if(groupTwo == hr){
         document.getElementById("changeImage").src = "lunch_image.jpg";
         document.getElementById("greetText").innerText = "LET'S HAVE SOME LUNCH !!";
         document.getElementById("timeText").innerText = "GOOD AFTERNOON !! TAKE SOME SLEEP";
     }
-    if(groupThree == hr){
-        document.getElementById("changeImage").src = "goodevening_image";
+    else if(groupThree == hr){
+        document.getElementById("changeImage").src = "goodevening_image.jpg";
         document.getElementById("greetText").innerText = "STOP YAWNING, GET SOME TEA.. ITS JUST EVENING!";
         document.getElementById("timeText").innerText = "GOOD EVENING !!";     
     }
-    if(groupFour == hr){
+    else if(groupFour == hr){
         document.getElementById("changeImage").src = "goodnight_image.jpg";
         document.getElementById("greetText").innerText = "CLOSE YOUR EYES AND GO TO SLEEP";
         document.getElementById("timeText").innerText = "GOOD NIGHT !!";
+    }
+    else{
+        document.getElementById("changeImage").src = "noddy_image.png";
+        document.getElementById("greetText").innerText = " My First Digital Clock ";
+        document.getElementById("timeText").innerText = " Have a nice day : ) ";
     }
 };
 setInterval(showTime,1000);
